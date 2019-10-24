@@ -1,0 +1,10 @@
+[Unit]
+Description=p2peye Exporter
+
+[Service]
+#User=p2peye_exporter
+ExecStart=<exporter_home>/dist/p2peye_exporter
+#ExecStart=/usr/bin/python3 <exporter_home>/p2peye_exporter.py
+
+[Install]
+WantedBy=multi-user.target
