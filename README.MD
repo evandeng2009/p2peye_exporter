@@ -1,7 +1,7 @@
 # Prometheus p2peye_exporter
 
 ## 为什么做
-P2P 网上理财平台众多，集中导航平台`网贷天眼`上也是五花八门。为了便于简洁列表展示及方便排序筛选。同时不想交互数据库，就用 Prometheus + exporter + Grafanafa 方式来实现。
+P2P 网上理财平台众多，集中导航平台`网贷天眼`上也是五花八门。为了便于简洁列表展示及方便排序筛选。同时不想交互数据库，就用 Prometheus + exporter + Grafana 方式来实现。
 
 ## 指标数据
 ```
@@ -42,12 +42,14 @@ def get_port():
         app_port = 8087
     return app_port
 ```
-* `网贷天眼`账号密码，这个密码是在浏览器登录时 F12 从 post 请求参数中复制获取的一串字符串
+* 账号密码 浏览器登录时 F12 从 post 请求参数中复制获取密码参数值
 ```Python
 user_name = 'p2peye_user_name'
 user_password = 'p2peye_user_password_in_browser_request'
 ```
+* 看板配置 Prometheus 采集频率和看板时间范围推荐设置为每天和最近 24 小时
 
 ## 编译运行
 * 直接运行`build_install.sh`
 * 或者运行`p2peye_exporter.py`
+* 最后打开如 127.0.0.1:8087/metrics 查看指标数据
