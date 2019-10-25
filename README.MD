@@ -32,7 +32,7 @@ p2peye_rebate{all_roi="505",all_roi_rate="20.2%",beginner_flag="是",comment_url
 ![标的分布](https://github.com/evandeng2009/p2peye_exporter/raw/master/docs/trend_series.png)
 
 # 参数配置
-* 端口默认 8047
+* 端口配置 默认8047，修改代码端口或者设定系统环境变量 `p2peye_exporter_port`
 ```Python
 # Get app port
 def get_port():
